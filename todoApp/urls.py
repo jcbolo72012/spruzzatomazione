@@ -1,4 +1,4 @@
-"""todoApp URL Configuration
+"""wateringApp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -20,7 +20,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import settings, views
 
 urlpatterns = [
-    path('todos/', include('todos.urls')),
+    path('watering/', include('watering.urls')),
     path('admin/', admin.site.urls),
     path('', views.index)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

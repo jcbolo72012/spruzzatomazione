@@ -8,11 +8,11 @@
   cursor: pointer;
 }
 
-.todo-complete {
+.watering-complete {
   text-decoration: line-through;
 }
 
-.todo-status-checkbox {
+.watering-status-checkbox {
   cursor: pointer;
   margin-right: 10px;
 }

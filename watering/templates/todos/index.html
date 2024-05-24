@@ -1,7 +1,7 @@
-{% extends 'todos/base.html' %}
+{% extends 'watering/base.html' %}
 
 {% block title %}
-<title>Todo list</title>
+<title>Watering list</title>
 {% endblock %}
 
 {% block content %}
@@ -12,16 +12,16 @@
     <div class="offset-md-2 col-lg-9">
       <div class="page-header">
         <h1>
-          Todo List
+          Watering List
         </h1>
       </div>
     </div>
   </div>
 
-  <!-- Add a todo row -->
+  <!-- Add a watering row -->
   <div class="row">
     <div class="offset-md-2 col-lg-9">
-      <form method="post" action="{% url 'todos:add' %}">
+      <form method="post" action="{% url 'watering:add' %}">
         {% csrf_token %}
         <div class="form-row">
           <div class="col-md-6">
@@ -38,20 +38,20 @@
   </div>
   <hr />
 
-  <!-- todo list row -->
+  <!-- watering list row -->
   <div class="row">
     <div class="offset-md-2 col-lg-6">
       <div class="list-group">
-        {% for todo in todo_list %}
-        <div class="list-group-item {% if todo.isCompleted %} todo-complete {% endif %}">
-          <form style="display: inline;" method="post" action="{% url 'todos:update' todo.id %}">
+        {% for watering in watering_list %}
+        <div class="list-group-item {% if watering.isCompleted %} watering-complete {% endif %}">
+          <form style="display: inline;" method="post" action="{% url 'watering:update' watering.id %}">
             {% csrf_token %}
-            <input type="checkbox" name="isCompleted" onchange="this.form.submit()" {% if todo.isCompleted %} checked
-              {% endif %} class="todo-status-checkbox"
-              title="{% if not todo.isCompleted %} mark as done {% else %} mark undone {% endif %}">
+            <input type="checkbox" name="isCompleted" onchange="this.form.submit()" {% if watering.isCompleted %} checked
+              {% endif %} class="watering-status-checkbox"
+              title="{% if not watering.isCompleted %} mark as done {% else %} mark undone {% endif %}">
           </form>
-          {{ todo.title }}
-          <a href="{% url 'todos:delete' todo.id %}" title="Delete">
+          {{ watering.title }}
+          <a href="{% url 'watering:delete' watering.id %}" title="Delete">
             <i class="far fa-trash-alt"></i>
           </a>
         </div>
