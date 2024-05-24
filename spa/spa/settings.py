@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-)i(z=gt_4+w8a097!roqzl=oah@ib7=hsk5fpk7i%s14d!&v)4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.17.176.119']
+ALLOWED_HOSTS = ['3.17.176.119', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'watering.apps.WateringConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
